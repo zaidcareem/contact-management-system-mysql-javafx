@@ -3,9 +3,9 @@
 ### Functionalities up to date:
 
 - Sign up
-- Login with his respective credentials given when signing up
+- Login with respective credentials given when signing up
 - Add contacts
-- Delete his user profile through password authentication [this clears all contacts he has saved so far]
+- Delete user profile through password authentication [this clears all contacts he has saved so far]
 - And sign up as a new user again
 
 
