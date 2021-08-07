@@ -14,7 +14,7 @@
 
 1. *Set your respective MySQL credentials at* ***src\app\Database.java***
 
-2. *You should have the jdbc connector loaded to your project through your IDE*
+2. *You should have the* ***jdbc connector*** *loaded to your project through your IDE*
 
-3. Run the SQL queries in the sql folder
+3. *Run the simple SQL queries in the* ***sql*** *folder* ***before running the application for the first time*** 
 
