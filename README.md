@@ -5,8 +5,8 @@
 - Sign up
 - Login with respective credentials given when signing up
 - Add contacts
-- Delete user profile through password authentication [ this clears all contacts user has saved so far ]
-- And sign up as a new user again
+- Delete user profile through password authentication [ this also clears all contacts user has saved so far ]
+- Then sign up as a new user again
 
 
 
@@ -25,3 +25,7 @@
 ``` sql
   SELECT * FROM users;
 ```
+
+#### Note :
+
+The value of the contacts' number **cannot exceed (2^31 - 1)** and should obviously be non-negative.
