@@ -23,3 +23,5 @@
 hs_err_pid*
 
 out/
+
+.idea/libraries/mysql_connector_java_8_0_26.xml
