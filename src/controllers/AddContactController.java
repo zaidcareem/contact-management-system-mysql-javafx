@@ -75,8 +75,32 @@ public class AddContactController implements Initializable {
         clearFields();
     }
 
-    // checks whether the number of digits of the contact's number is 10, and no more or no less
+    /*
+     * The below method;
+     *
+     * Checks whether the number of digits of the contact's number is 10, and no more or no less
+     *
+     * And also prevents SQL 'Data Truncation Error' from occurring due to entering a larger value than the maximum an int
+     * can hold.
+     *
+     * This is done because in the 'contacts' table which is the table to hold every contacts' number in its number column
+     * the data type given to it is 'int'
+     *
+     * So we should give it a value less than or equal to (2^31 - 1), but greater than 0 which is the max value an int can hold
+     *
+     * Thus, preventing 'Data Truncation Error'
+     */
     public boolean validateNumber(String number) {
+
+        int MAX_NUMBER = (int) (Math.pow(2, 31) - 1);
+        double contactNumber = Double.parseDouble(number);
+
+        /*
+         * number should not be more than (2^31 - 1) or a negative number
+         */
+        if ((contactNumber > MAX_NUMBER) || (contactNumber < 0)) {
+            return false;
+        }
 
         if (number.length() == 10) {
 
