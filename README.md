@@ -18,4 +18,4 @@
 
 3. *Run the simple SQL queries in the* ***sql*** *folder* ***before running the application for the first time*** 
 
-4. *Java version used is 1.8, i.e. Java8
+4. *Java version used is 1.8, i.e. Java8*
