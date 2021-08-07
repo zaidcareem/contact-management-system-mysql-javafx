@@ -16,3 +16,5 @@
 
 2. *You should have the jdbc connector loaded to your project through your IDE*
 
+3. Run the SQL queries in the sql folder
+
