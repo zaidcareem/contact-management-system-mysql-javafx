@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AddContactController">
    <children>
       <Button fx:id="okBtn" layoutX="431.0" layoutY="421.0" mnemonicParsing="false" onAction="#addContact" text="OK" />
@@ -20,8 +19,8 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="contactNameTf" layoutX="451.0" layoutY="317.0" />
-      <TextField fx:id="contactNumberTf" layoutX="451.0" layoutY="352.0" promptText="Enter a 10 digit Integer" />
+      <TextField fx:id="contactNameTf" layoutX="451.0" layoutY="317.0" prefHeight="31.0" prefWidth="216.0" />
+      <TextField fx:id="contactNumberTf" layoutX="451.0" layoutY="352.0" prefHeight="31.0" prefWidth="216.0" promptText="10 digit number &lt; [(2^31)-1]" />
       <Label layoutX="302.0" layoutY="126.0" text="Add New Contact">
          <font>
             <Font name="System Bold Italic" size="36.0" />
