@@ -22,4 +22,4 @@
 
 5. *If have you forgotten your credentials you can run the below MySQL query and retrieve them*
 
-        ___SELECT___ * ___FROM users___*;
+      ___SELECT___ * ___FROM users___;
