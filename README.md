@@ -16,6 +16,7 @@
 
 2. *You should have the* ***jdbc connector*** *loaded to your project through your IDE*
 
-3. *Run the simple SQL queries in the* ***sql*** *folder* ***before running the application for the first time*** 
+3. *Run the 3 simple SQL queries mentioned in any one of the files in the* ***sql*** *folder* ***before running the application for the first time*** 
 
 4. *Java version used is 1.8, i.e. Java8*
+
