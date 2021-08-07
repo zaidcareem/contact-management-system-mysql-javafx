@@ -20,3 +20,6 @@
 
 4. *Java version used is 1.8, i.e. Java8*
 
+5. *If have you forgotten your credentials you can run the below MySQL query and retrieve them*
+
+        - ___select___ * ___from users___*;
