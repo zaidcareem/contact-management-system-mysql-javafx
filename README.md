@@ -28,4 +28,4 @@
 
 #### Note :
 
-The value of the contacts' number **cannot exceed (2^31 - 1)** and should obviously be non-negative.
+The value of the contacts' number **cannot exceed (2^31 - 1)** and should be non-negative.
