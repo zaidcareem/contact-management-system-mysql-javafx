@@ -3,11 +3,16 @@ package controllers;
 import app.Alerts;
 import app.ChangeView;
 import app.Database;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -95,8 +100,8 @@ public class ContactsController implements Initializable {
          * Crash would happen if variable 'name' is null, i.e if variable 'name' is not initialized
          */
         if (contactList.getItems().isEmpty()) {
-            contactNameLabel.setText("Contact Name");
-            contactNumberLabel.setText("Contact Number");
+            contactNameLabel.setText("-");
+            contactNumberLabel.setText("-");
             return;
         }
 
@@ -173,5 +178,33 @@ public class ContactsController implements Initializable {
         } else {
             System.out.println("No contact selected");
         }
+    }
+
+    // When editBtn is pressed, send information of the contact selected for editing to the contact editing scene
+    public void sendInfoToEditController(ActionEvent e) throws IOException {
+
+        // terminate execution of function if no contact is selected
+        if (contactList.getSelectionModel().getSelectedItem() == null) {
+            System.out.println("No contact selected for editing");
+            return;
+        }
+
+        String contactName = contactNameLabel.getText();
+        String contactNumber = contactNumberLabel.getText();
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../scenes/EditContact.fxml"));
+        Parent root = loader.load();
+
+        // return the controller of 'EditContacts'
+        EditContactController editingController = loader.getController();
+        editingController.setTextBoxes(contactName, contactNumber);
+
+        Stage window = (Stage) addBtn.getScene().getWindow();
+        Scene scene = new Scene(root, 900, 700);
+        window.setScene(scene);
+        window.setResizable(false);
+        window.show();
+
+
     }
 }
