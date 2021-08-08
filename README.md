@@ -3,10 +3,15 @@
 ### Functionalities up to date:
 
 - Sign up
+
 - Login with respective credentials given when signing up
+
 - Add contacts
+
 - Delete user profile through password authentication [ this also clears all contacts user has saved so far ]
+
 - Delete contacts
+
 - Then sign up as a new user again
 
 
@@ -37,9 +42,12 @@ The value user intends to enter as the contacts' number has a condition  **: it 
 
 Also, it should be non-negative.
 
+We have a concept of Scenes in JavaFX, and I have used the words *scene* and *view* interchangeably
+
 #### Other :
 
 IDE and other tools used are;
 
 1. IntelliJ Community Edition
+
 2. Scene Builder
