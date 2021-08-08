@@ -19,7 +19,7 @@ public class Database {
     public Connection getConnection() {
 
         String user = "root";
-        String password = "Password"; //Please enter your localhost password to access the database
+        String password = "Password"; //Please enter your database password to access the database
         String databaseName = "cms";
 
         try {
