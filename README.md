@@ -1,6 +1,6 @@
 # contact-management-system-mysql-javafx
 
-### Functionalities up to date:
+### Functionalities up to date :
 
 - Sign up
 
