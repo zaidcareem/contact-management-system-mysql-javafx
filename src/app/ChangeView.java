@@ -22,11 +22,16 @@ public class ChangeView {
 
     public void changeView(String toView) throws IOException {
 
-        Parent root = FXMLLoader.load(getClass().getResource("../scenes/" + toView + ".fxml"));
-        Stage window = (Stage) this.node.getScene().getWindow();
-        Scene scene = new Scene(root, 900, 700);
-        window.setScene(scene);
-        window.show();
-        window.setResizable(false);
+        try {
+
+            Parent root = FXMLLoader.load(getClass().getResource("../scenes/" + toView + ".fxml"));
+            Stage window = (Stage) this.node.getScene().getWindow();
+            Scene scene = new Scene(root, 900, 700);
+            window.setScene(scene);
+            window.show();
+            window.setResizable(false);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
