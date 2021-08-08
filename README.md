@@ -8,9 +8,13 @@
 
 - Add contacts
 
-- Delete user profile through password authentication [ this also clears all contacts user has saved so far ]
+- Read contacts
+
+- Edit contacts
 
 - Delete contacts
+
+- Delete user profile through password authentication [ this also clears all contacts user has saved so far ]
 
 - Then sign up as a new user again
 
