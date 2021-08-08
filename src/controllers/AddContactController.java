@@ -89,6 +89,8 @@ public class AddContactController implements Initializable {
      * So we should give it a value less than or equal to (2^31 - 1), but greater than 0 which is the max value an int can hold
      *
      * Thus, preventing 'Data Truncation Error'
+     *
+     * ----    method is used in 'EditContactController' too
      */
     public boolean validateNumber(String number) {
 
