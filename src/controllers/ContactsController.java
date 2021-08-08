@@ -117,7 +117,7 @@ public class ContactsController implements Initializable {
         rs.next(); // make the 1st row the current row
 
         number = rs.getInt(1); // store the contact's number in this variable
-        String RealNumber = Integer.toString(number);
+        String RealNumber = Integer.toString(number);   // convert to string
 
         contactNameLabel.setText(name);
         contactNumberLabel.setText(RealNumber);
@@ -145,5 +145,33 @@ public class ContactsController implements Initializable {
 
         st.close();
         conn.close();
+    }
+
+    // Delete contact from the ListView 'contactList'
+    public void deleteContact() throws SQLException {
+
+        // ONLY if a contact is selected do the below
+        if (contactList.getSelectionModel().getSelectedItem() != null) {
+
+            String contactName = contactList.getSelectionModel().getSelectedItem();
+
+            db = new Database();
+            conn = db.getConnection();
+
+            String query = "DELETE FROM contacts WHERE name = ?";
+            PreparedStatement ps = conn.prepareStatement(query);
+            ps.setString(1, contactName);
+
+            int rowsAffected = ps.executeUpdate();
+
+            if (rowsAffected != 0) {
+                contactList.getItems().remove(contactName);
+                System.out.println(contactName + " deleted");
+            } else {
+                System.out.println("Could not delete contact");
+            }
+        } else {
+            System.out.println("No contact selected");
+        }
     }
 }
