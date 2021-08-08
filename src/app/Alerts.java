@@ -53,4 +53,12 @@ public class Alerts {
         alert.setContentText("Successful Sign Up");
         alert.showAndWait();
     }
+
+    public void showAllContactsDeletedMessage() {
+        alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Contacts deleted");
+        alert.setHeaderText("You deleted all contacts!");
+        alert.setContentText("All contacts cleared");
+        alert.showAndWait();
+    }
 }
