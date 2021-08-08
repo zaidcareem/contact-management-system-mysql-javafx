@@ -26,7 +26,7 @@ public class Alerts {
         alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Invalid Number");
         alert.setHeaderText("Number is Invalid");
-        alert.setContentText("Please enter a 10 digit number");
+        alert.setContentText("Please enter a 10 digit number <= (2^31 - 1)");
         alert.show();
     }
 
