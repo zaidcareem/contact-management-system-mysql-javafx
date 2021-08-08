@@ -6,7 +6,7 @@
 - Login with respective credentials given when signing up
 - Add contacts
 - Delete user profile through password authentication [ this also clears all contacts user has saved so far ]
-- Delete user contacts
+- Delete contacts
 - Then sign up as a new user again
 
 
