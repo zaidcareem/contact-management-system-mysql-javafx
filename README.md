@@ -34,7 +34,7 @@
 
 #### Note :
 
-When adding a new contact,
+When adding a new contact, or editing an existing contact;
 
 The value user intends to enter as the contacts' number has a condition  **: it cannot exceed (2^31 - 1)** 
 
