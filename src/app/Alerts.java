@@ -41,4 +41,8 @@ public class Alerts {
     public void showAllContactsDeletedMessage() {
         auxAlert(Alert.AlertType.INFORMATION, "Contacts deleted", "All contacts cleared!" );
     }
+
+    public void showEditionSuccessful() {
+        auxAlert(Alert.AlertType.INFORMATION, "Edited Contact", "Contact edited successfully");
+    }
 }
