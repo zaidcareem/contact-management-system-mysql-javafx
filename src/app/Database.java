@@ -19,7 +19,7 @@ public class Database {
     public Connection getConnection() {
 
         String user = "root";
-        String password = "Password";
+        String password = "Password"; //Please enter your database password to access the database
         String databaseName = "cms";
 
         try {
@@ -28,12 +28,16 @@ public class Database {
 
         } catch (ClassNotFoundException e) {
             System.out.println("Class Not Found Exception");
+            e.printStackTrace();
         } catch (NullPointerException e) {
             System.out.println("Null Pointer Exception");
+            e.printStackTrace();
         } catch (SQLException e) {
             System.out.println("SQL Exception");
+            e.printStackTrace();
         } catch (Exception e) {
             System.out.println("Other Exception");
+            e.printStackTrace();
         }
         return link;
     }
