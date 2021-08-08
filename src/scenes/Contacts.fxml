@@ -26,7 +26,7 @@
       </Label>
       <Button layoutX="15.0" layoutY="117.0" mnemonicParsing="false" text="Edit" />
       <Button fx:id="addBtn" layoutX="14.0" layoutY="79.0" mnemonicParsing="false" onAction="#changeViewToAddContact" text="Add" />
-      <Button fx:id="deleteBtn" layoutX="15.0" layoutY="155.0" mnemonicParsing="false" text="Delete" />
+      <Button fx:id="deleteBtn" layoutX="15.0" layoutY="155.0" mnemonicParsing="false" onAction="#deleteContact" text="Delete" />
       <Button fx:id="signOutBtn" layoutX="7.0" layoutY="645.0" mnemonicParsing="false" onAction="#signOut" text="Sign Out" />
       <Button fx:id="clearAllBtn" layoutX="15.0" layoutY="193.0" mnemonicParsing="false" onAction="#clearAllContacts" text="Clear All" />
    </children>
