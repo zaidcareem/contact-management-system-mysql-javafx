@@ -35,3 +35,10 @@ The value user intends to enter as the contacts' number has a condition  **: it 
 [ in order to prevent data truncation error in the database, refer ___src\controllers\AddContactController.java -> validateNumber(String number)___ ] 
 
 Also, it should be non-negative.
+
+### Other :
+
+IDE and other tools used are;
+
+1. IntelliJ Community Edition
+2. Scene Builder
