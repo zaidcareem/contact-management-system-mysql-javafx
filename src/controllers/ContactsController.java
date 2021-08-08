@@ -1,5 +1,6 @@
 package controllers;
 
+import app.Alerts;
 import app.ChangeView;
 import app.Database;
 import javafx.fxml.FXML;
@@ -10,10 +11,7 @@ import javafx.scene.control.ListView;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ResourceBundle;
 
 public class ContactsController implements Initializable {
@@ -24,6 +22,10 @@ public class ContactsController implements Initializable {
     private ListView<String> contactList;
     @FXML
     private Label contactNameLabel, contactNumberLabel;
+
+    private Database db;
+    private Connection conn;
+    private Alerts alert;
 
 
     @Override
@@ -65,8 +67,8 @@ public class ContactsController implements Initializable {
 
         String name;
 
-        Database db = new Database();
-        Connection conn = db.getConnection();
+        db = new Database();
+        conn = db.getConnection();
 
         String query = "SELECT name FROM contacts";
 
@@ -79,18 +81,32 @@ public class ContactsController implements Initializable {
             contactList.getItems().add(name);
 
         }
+
+        rs.close();
+        ps.close();
+        conn.close();
     }
 
     // show name and number of the contact selected in the ListView 'contactList'
     public void reflectDataOfContactSelected() throws SQLException {
+
+        /*
+         * The below if block is important to prevent crash when clearing all contacts
+         * Crash would happen if variable 'name' is null, i.e if variable 'name' is not initialized
+         */
+        if (contactList.getItems().isEmpty()) {
+            contactNameLabel.setText("Contact Name");
+            contactNumberLabel.setText("Contact Number");
+            return;
+        }
 
         String name;
         int number;
 
         name = contactList.getSelectionModel().getSelectedItem();
 
-        Database db = new Database();
-        Connection conn = db.getConnection();
+        db = new Database();
+        conn = db.getConnection();
 
         String query = "SELECT number from contacts WHERE name = ?";
         PreparedStatement ps = conn.prepareStatement(query);
@@ -105,5 +121,29 @@ public class ContactsController implements Initializable {
 
         contactNameLabel.setText(name);
         contactNumberLabel.setText(RealNumber);
+    }
+
+    // method to clear all contacts
+    public void clearAllContacts() throws SQLException {
+
+        db = new Database();
+        conn = db.getConnection();
+
+        String query = "DELETE FROM contacts";
+        Statement st = conn.createStatement();
+        int rowsAffected = st.executeUpdate(query);
+
+        if (rowsAffected > 0) {
+
+            contactList.getItems().clear();
+            System.out.println("Contact list cleared");
+            alert = new Alerts();
+            alert.showAllContactsDeletedMessage();
+        } else {
+            System.out.println("Failed to clear all contacts or maybe you have no contacts");
+        }
+
+        st.close();
+        conn.close();
     }
 }
