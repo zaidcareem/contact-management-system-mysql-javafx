@@ -28,4 +28,10 @@
 
 #### Note :
 
-The value of the contacts' number **cannot exceed (2^31 - 1)** and should be non-negative.
+When adding a new contact,
+
+The value user intends to enter as the contacts' number has a condition  **: it cannot exceed (2^31 - 1)** 
+
+[ in order to prevent data truncation error in the database, refer ___src\controllers\AddContactController.java -> validateNumber(String number)___ ] 
+
+Also, it should be non-negative.
