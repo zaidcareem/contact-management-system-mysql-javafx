@@ -204,7 +204,10 @@ public class ContactsController implements Initializable {
         window.setScene(scene);
         window.setResizable(false);
         window.show();
+    }
 
-
+    public void moveToChangePasswordView() throws IOException {
+        ChangeView cv = new ChangeView(signOutBtn);
+        cv.changeView("ChangePassword");
     }
 }
