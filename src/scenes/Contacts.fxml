@@ -39,6 +39,6 @@
             <Font name="System Bold" size="36.0" />
          </font>
       </Label>
-      <Button fx:id="changePasswordBtn" layoutX="748.0" layoutY="645.0" mnemonicParsing="false" onAction="#changePassword" text="Change Password" />
+      <Button fx:id="changePasswordBtn" layoutX="748.0" layoutY="645.0" mnemonicParsing="false" onAction="#moveToChangePasswordView" text="Change Password" />
    </children>
 </AnchorPane>
