@@ -6,6 +6,8 @@
 
 - Login with respective credentials given when signing up
 
+- Change Password
+
 - Add contacts
 
 - Read contacts
