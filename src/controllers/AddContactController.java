@@ -95,6 +95,7 @@ public class AddContactController implements Initializable {
     public boolean validateNumber(String number) {
 
         int MAX_NUMBER = (int) (Math.pow(2, 31) - 1);
+
         double contactNumber = Double.parseDouble(number);
 
         /*

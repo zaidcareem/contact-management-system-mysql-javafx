@@ -3,7 +3,6 @@ package controllers;
 import app.Alerts;
 import app.ChangeView;
 import app.Database;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -30,7 +29,6 @@ public class ContactsController implements Initializable {
 
     private Database db;
     private Connection conn;
-    private Alerts alert;
 
 
     @Override
@@ -142,7 +140,7 @@ public class ContactsController implements Initializable {
 
             contactList.getItems().clear();
             System.out.println("Contact list cleared");
-            alert = new Alerts();
+            Alerts alert = new Alerts();
             alert.showAllContactsDeletedMessage();
         } else {
             System.out.println("Failed to clear all contacts or maybe you have no contacts");
@@ -181,7 +179,7 @@ public class ContactsController implements Initializable {
     }
 
     // When editBtn is pressed, send information of the contact selected for editing to the contact editing scene
-    public void sendInfoToEditController(ActionEvent e) throws IOException {
+    public void sendInfoToEditController() throws IOException {
 
         // terminate execution of function if no contact is selected
         if (contactList.getSelectionModel().getSelectedItem() == null) {
@@ -208,6 +206,6 @@ public class ContactsController implements Initializable {
 
     public void moveToChangePasswordView() throws IOException {
         ChangeView cv = new ChangeView(signOutBtn);
-        cv.changeView("ChangePassword");
+        cv.changeView("PasswordChange");
     }
 }
