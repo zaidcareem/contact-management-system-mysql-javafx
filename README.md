@@ -32,7 +32,7 @@
 
 4. Java version used is 1.8, i.e. ***Java8***
 
-5. If have you forgotten your credentials you can run the below MySQL query and retrieve them
+5. If you have forgotten your credentials you can run the below MySQL query and retrieve them
 
 ``` sql
   SELECT * FROM users;
