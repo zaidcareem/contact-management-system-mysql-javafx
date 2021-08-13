@@ -4,10 +4,14 @@ import app.Alerts;
 import app.ChangeView;
 import app.Database;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -25,7 +29,6 @@ public class ContactsController implements Initializable {
 
     private Database db;
     private Connection conn;
-    private Alerts alert;
 
 
     @Override
@@ -95,8 +98,8 @@ public class ContactsController implements Initializable {
          * Crash would happen if variable 'name' is null, i.e if variable 'name' is not initialized
          */
         if (contactList.getItems().isEmpty()) {
-            contactNameLabel.setText("Contact Name");
-            contactNumberLabel.setText("Contact Number");
+            contactNameLabel.setText("-");
+            contactNumberLabel.setText("-");
             return;
         }
 
@@ -137,7 +140,7 @@ public class ContactsController implements Initializable {
 
             contactList.getItems().clear();
             System.out.println("Contact list cleared");
-            alert = new Alerts();
+            Alerts alert = new Alerts();
             alert.showAllContactsDeletedMessage();
         } else {
             System.out.println("Failed to clear all contacts or maybe you have no contacts");
@@ -173,5 +176,36 @@ public class ContactsController implements Initializable {
         } else {
             System.out.println("No contact selected");
         }
+    }
+
+    // When editBtn is pressed, send information of the contact selected for editing to the contact editing scene
+    public void sendInfoToEditController() throws IOException {
+
+        // terminate execution of function if no contact is selected
+        if (contactList.getSelectionModel().getSelectedItem() == null) {
+            System.out.println("No contact selected for editing");
+            return;
+        }
+
+        String contactName = contactNameLabel.getText();
+        String contactNumber = contactNumberLabel.getText();
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../scenes/EditContact.fxml"));
+        Parent root = loader.load();
+
+        // return the controller of 'EditContacts'
+        EditContactController editingController = loader.getController();
+        editingController.setTextBoxes(contactName, contactNumber);
+
+        Stage window = (Stage) addBtn.getScene().getWindow();
+        Scene scene = new Scene(root, 900, 700);
+        window.setScene(scene);
+        window.setResizable(false);
+        window.show();
+    }
+
+    public void moveToChangePasswordView() throws IOException {
+        ChangeView cv = new ChangeView(signOutBtn);
+        cv.changeView("PasswordChange");
     }
 }

@@ -17,7 +17,7 @@ import java.util.ResourceBundle;
 public class SignUpController implements Initializable {
 
     @FXML
-    private Button signMeUpBtn, backBtn;
+    private Button backBtn;
     @FXML
     private TextField usernameTf;
     @FXML

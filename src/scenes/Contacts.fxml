@@ -9,25 +9,36 @@
 <AnchorPane prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ContactsController">
    <children>
       <ListView fx:id="contactList" layoutX="100.0" layoutY="79.0" prefHeight="597.0" prefWidth="271.0" style="-fx-background-color: #d3d3d3;" />
-      <Label layoutX="100.0" layoutY="14.0" text="Name List">
+      <Label layoutX="100.0" layoutY="14.0" style="-fx-underline: true;" text="Name List          ">
          <font>
-            <Font name="System Bold Italic" size="24.0" />
+            <Font name="System Bold Italic" size="36.0" />
          </font>
       </Label>
-      <Label fx:id="contactNameLabel" alignment="CENTER" layoutX="372.0" layoutY="224.0" prefHeight="53.0" prefWidth="523.0" text="Contact Name">
-         <font>
-            <Font name="System Bold" size="36.0" />
-         </font>
-      </Label>
-      <Label fx:id="contactNumberLabel" alignment="CENTER" layoutX="373.0" layoutY="324.0" prefHeight="53.0" prefWidth="523.0" text="Contact Number">
+      <Label fx:id="contactNameLabel" layoutX="590.0" layoutY="297.0" prefHeight="53.0" prefWidth="305.0" text="-">
          <font>
             <Font name="System Bold" size="36.0" />
          </font>
       </Label>
-      <Button layoutX="15.0" layoutY="117.0" mnemonicParsing="false" text="Edit" />
+      <Label fx:id="contactNumberLabel" layoutX="589.0" layoutY="378.0" prefHeight="53.0" prefWidth="311.0" text="-">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <Button fx:id="editBtn" layoutX="15.0" layoutY="117.0" mnemonicParsing="false" onAction="#sendInfoToEditController" text="Edit" />
       <Button fx:id="addBtn" layoutX="14.0" layoutY="79.0" mnemonicParsing="false" onAction="#changeViewToAddContact" text="Add" />
       <Button fx:id="deleteBtn" layoutX="15.0" layoutY="155.0" mnemonicParsing="false" onAction="#deleteContact" text="Delete" />
       <Button fx:id="signOutBtn" layoutX="7.0" layoutY="645.0" mnemonicParsing="false" onAction="#signOut" text="Sign Out" />
       <Button fx:id="clearAllBtn" layoutX="15.0" layoutY="193.0" mnemonicParsing="false" onAction="#clearAllContacts" text="Clear All" />
+      <Label layoutX="410.0" layoutY="378.0" text="Number :">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="410.0" layoutY="297.0" prefHeight="53.0" prefWidth="168.0" text="Name     :">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <Button fx:id="changePasswordBtn" layoutX="748.0" layoutY="645.0" mnemonicParsing="false" onAction="#moveToChangePasswordView" text="Change Password" />
    </children>
 </AnchorPane>

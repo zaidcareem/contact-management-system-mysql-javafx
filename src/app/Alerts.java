@@ -6,59 +6,43 @@ public class Alerts {
 
     Alert alert;
 
+    public void auxAlert(Alert.AlertType alertType, String setTitle, String setHeaderText) {
+
+        alert = new Alert(alertType);
+        alert.setTitle(setTitle);
+        alert.setHeaderText(setHeaderText);
+        alert.showAndWait();
+    }
+
     public void showInvalidInformationMessage() {
-        alert = new Alert(Alert.AlertType.WARNING);
-        alert.setTitle("Invalid");
-        alert.setHeaderText("Invalid Information");
-        alert.setContentText("The info provided does not match");
-        alert.show();
+        auxAlert(Alert.AlertType.WARNING, "Invalid", "Invalid Information");
     }
 
     public void showLoginUnsuccessfulMessage() {
-        alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Log In Unsuccessful");
-        alert.setHeaderText("You failed to log in");
-        alert.setContentText("Unsuccessful Login");
-        alert.show();
+        auxAlert(Alert.AlertType.ERROR, "Log In MSG", "You failed to log in");
     }
 
     public void showNumberNotValid() {
-        alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Invalid Number");
-        alert.setHeaderText("Number is Invalid");
-        alert.setContentText("Please enter a 10 digit number <= (2^31 - 1)");
-        alert.show();
+        auxAlert(Alert.AlertType.ERROR, "Invalid Number", "Please enter a 10 digit number <= (2^31 - 1)" );
     }
 
     public void showInsufficientInformationMessage() {
-        alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Insufficient Information");
-        alert.setHeaderText("Please fill in all required fields");
-        alert.setContentText("Empty fields found");
-        alert.show();
+        auxAlert(Alert.AlertType.ERROR, "Insufficient Information", "Please fill in all required fields" );
     }
 
     public void showPasswordsDoesNotMatch() {
-        alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Password Mismatch");
-        alert.setHeaderText("Passwords does not match!");
-        alert.setContentText("Re-enter password");
-        alert.show();
+        auxAlert(Alert.AlertType.ERROR, "Password Mismatch", "Passwords does not match!" );
     }
 
     public void showSignUpSuccessfulMessage() {
-        alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Sign Up Successful");
-        alert.setHeaderText("You Signed Up Successfully!");
-        alert.setContentText("Successful Sign Up");
-        alert.showAndWait();
+        auxAlert(Alert.AlertType.INFORMATION, "Sign Up Successful", "You Signed Up Successfully!" );
     }
 
     public void showAllContactsDeletedMessage() {
-        alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Contacts deleted");
-        alert.setHeaderText("You deleted all contacts!");
-        alert.setContentText("All contacts cleared");
-        alert.showAndWait();
+        auxAlert(Alert.AlertType.INFORMATION, "Contacts deleted", "All contacts cleared!" );
+    }
+
+    public void showEditionSuccessful() {
+        auxAlert(Alert.AlertType.INFORMATION, "Edited Contact", "Contact edited successfully");
     }
 }
