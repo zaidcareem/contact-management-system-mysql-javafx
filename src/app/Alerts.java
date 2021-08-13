@@ -13,6 +13,13 @@ public class Alerts {
         alert.setHeaderText(setHeaderText);
         alert.showAndWait();
     }
+    //make auxAlert() method static
+    public static void auxAlertStatic(Alert.AlertType alertType, String setTitle, String setHeaderText){
+        Alert alert = new Alert(alertType);
+        alert.setTitle(setTitle);
+        alert.setHeaderText(setHeaderText);
+        alert.show();
+    }
 
     public void showInvalidInformationMessage() {
         auxAlert(Alert.AlertType.WARNING, "Invalid", "Invalid Information");

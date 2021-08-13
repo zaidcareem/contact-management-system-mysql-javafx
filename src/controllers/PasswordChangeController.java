@@ -99,12 +99,23 @@ public class PasswordChangeController implements Initializable {
                 if (rowsAffectedHere == 1) {    // if query ran successfully as we intended
 
                     a = new Alerts();
-                    a.auxAlert(Alert.AlertType.INFORMATION, "Password Changer", "Password is successfully changed");
+                    a.auxAlert(
+                            Alert.AlertType.INFORMATION,
+                            "Password Changer",
+                            "Password is successfully changed"
+                    );
+
                     System.out.println("Password is changed");
                     goBack();
                 }
             } else {
                 System.out.println("Entered old password did not match the existing Password");
+                Alerts.auxAlertStatic(
+                        Alert.AlertType.ERROR,
+                        "Password Changer",
+                        "Entered old password did not match the existing Password"
+                );
+
             }
 
             st.close();
@@ -114,6 +125,12 @@ public class PasswordChangeController implements Initializable {
 
         } else {
             System.out.println("Nothing entered in one or both TextFields");
+            Alerts.auxAlertStatic(
+                    Alert.AlertType.ERROR,
+                    "Password Changer",
+                    "Nothing entered in one or both TextFields"
+            );
+
         }
     }
 
