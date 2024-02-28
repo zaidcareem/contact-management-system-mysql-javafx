@@ -1,4 +1,8 @@
+# run these quesries only before running the application for the first time 
+
 CREATE DATABASE cms;
+
+use cms;
 
 CREATE TABLE users (username varchar(20), password varchar(20));
 
