@@ -2,7 +2,7 @@
 
 CREATE DATABASE cms;
 
-use cms;
+USE cms;
 
 CREATE TABLE users (username varchar(20), password varchar(20));
 
