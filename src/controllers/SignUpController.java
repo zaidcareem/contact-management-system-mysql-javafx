@@ -19,6 +19,8 @@ public class SignUpController implements Initializable {
     @FXML
     private Button backBtn;
     @FXML
+    private Button signMeUpBtn;
+    @FXML
     private TextField usernameTf;
     @FXML
     private PasswordField passwordPf, reTypePasswordPf;
@@ -32,6 +34,11 @@ public class SignUpController implements Initializable {
     public void backToLoginView() throws IOException {
         ChangeView switchToView = new ChangeView(backBtn);
         switchToView.changeView("LogIn");
+    }
+
+    public void toContactsView() throws IOException {
+        ChangeView cv = new ChangeView(signMeUpBtn);
+        cv.changeView("Contacts");
     }
 
     // clear userName TextField, password and re-typePassword PasswordFields
@@ -57,7 +64,7 @@ public class SignUpController implements Initializable {
             addUserToDatabase();
             alert.showSignUpSuccessfulMessage();
             System.out.println(usernameTf.getText() + "'s sign up is successful");
-            backToLoginView();
+            toContactsView();
 
         } else {
 
